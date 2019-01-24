@@ -29,6 +29,29 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>,' +'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 id: 'mapbox.streets'
 }).addTo(mymap);
+
+// add a point
+L.marker([51.501, -0.12]).addTo(mymap)
+.bindPopup("<b>Hey world!</b><br />I am a popup.").openPopup();
+// add a circle
+L.circle([51.510, -0.15], 300, {
+color: 'green',
+fillColor: '#f03',
+fillOpacity: 0.5
+}).addTo(mymap).bindPopup("I am a circle on your map.");
+// add a polygon with 3 end points (i.e. a triangle)
+var myPolygon = L.polygon([
+[51.512, -0.08],
+[51.504, -0.04],
+[51.501, -0.03],
+[51.5, -0.01]
+],{
+color: 'blue',
+fillColor: '#f03',
+5 of 7
+fillOpacity: 0.5
+}).addTo(mymap).bindPopup("I am a polygon.");
+
 </script>
 </body>
 </html>
