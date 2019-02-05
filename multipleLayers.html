@@ -20,6 +20,10 @@ crossorigin=""></script>
 		getEarthquakes();
 	}
 
+function removeEarthquakeData() {
+	alert("remove the earthquake data here");
+}
+
 // Create a variable that will hold the XMLHttpRequest() - this must be done outside of the function so that all the functions can use the same variable
 var client;
 
@@ -71,6 +75,11 @@ function loadEarthquakelayer(earthquakedata) {
 <!-- the following script will load the map and set the default view and zoom, as well as loading the
 basemap tiles -->
 <button id="loadData" name="loadData" onclick="loadEarthquakeData()">Click here to load the data </button>
+
+<!--New button removing map data-->
+
+<button id="removeEarthquakeData" name="removeEarthquakeData" onclick="removeEarthquakeData()">Click here to remove the Eathquake data </button>
+
 <script>
 // load the map
 var mymap = L.map('mapid').setView([51.505, -0.09], 13);
